@@ -1,6 +1,5 @@
 # PyBank
 
-
 # Import Modules
 import csv
 from distutils.command.build_scripts import first_line_re
@@ -11,7 +10,8 @@ budget_csv_path = os.path.join("Resources", "budget_data.csv")
 # print(csv_path) Check path, Path is good to go
 
 # File to hold output of analysis
-output_budget_path = os.path.join("budget_analysis.txt")
+analysis_path = os.path.join("Analysis", "budget_analysis.txt")
+
 
 # Variables to use:
 
@@ -116,5 +116,5 @@ output = (
 print(output)
 
 # Export output to .txt file
-with open(output_budget_path, 'w') as text_file:
+with open(analysis_path, 'w') as text_file:
     text_file.write(output)
