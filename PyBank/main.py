@@ -10,6 +10,9 @@ budget_csv_path = os.path.join("Resources", "budget_data.csv")
 # print(csv_path) Check path, Path is good to go
 
 
+# File to hold output of analysis
+output_budget_path = os.path.join("budget_analysis.txt")
+
 # Variables to use: 
 total_months = 0 
 # Accumulator for months
@@ -24,26 +27,24 @@ with open(budget_csv_path) as budget_file:
     # If header exists, SKIP
     csv_header = next(csv_reader)
 
-    # Increment the count of total months
-    total_months += 1
-
     # Create for loop to read each row
     for row in csv_reader:
         total_months += 1
 
 
 # Generate the output
-output = f"Total Months = {total_months}"
+output = (
+    f"\nBudget Analysis: \n"
+    f"------------------------------------\n "
+    f"\tTotal Months = {total_months}"
+)
+
+# Print output
 print(output)
 
-
-
-
-
-
-
-
-
+# Export output to .txt file
+with open(output_budget_path, 'w') as text_file:
+    text_file.write(output)
 
 
 # Total number of months 
