@@ -9,6 +9,8 @@
 ### Tasks: Calculate each of the following:
 * Total number of months
 * Net total amount of "Profit/Losses" over entire period
+* The changes in "Profit/Losses" over the entire period ( month to month)
+* The average of "Profit/Losses"
 * The greatest increase in profits (date and amount) over entire period
 * The greatest decrease in profits (date and amount) over the entire period
 * The final script both print the analysis to terminal and export a .txt file with the results
