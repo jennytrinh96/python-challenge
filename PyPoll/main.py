@@ -29,8 +29,11 @@ candidates = []
 # Create dictionary to hold votes per candidates
 candidate_votes= {}
 
+# Holds winning count
+winner_count = 0
 
-
+# Holds Winner name
+winner_candidate = ''
 
 
 # Open csv file
@@ -79,8 +82,16 @@ for cv in candidate_votes:
     vote_output += f"{cv}: {vote_perc:.2f}% with {votes} votes.\n"
     #print(vote_output)
     
-    
+    # Compare the votes to winner_count
+    if votes > winner_count:
 
+        # Update replace winning vote each time theres a higher value
+        winner_count = votes
+
+        # Update winning candidate
+        winner_candidate = cv
+
+winner_output = f"Winner: {winner_candidate}"
 
 
 # Generate output
@@ -91,6 +102,8 @@ f"\nTotal Votes = {total_votes}\n"
 f"-------------------------------------"
 f"\nNominations: \n"
 f"\n{vote_output}\n"
+f"-------------------------------------"
+f"\n{winner_output}"
 )
 
 # Print Output
